@@ -248,3 +248,19 @@ nav a {
   color: white;
   font-family: Roxboroughcf;
   text-align: left; }
+
+.coment {
+  margin: 10px; }
+
+.boton-form {
+  margin: 20px; }
+
+.formatoTexto {
+  color: white;
+  font-family: Roxboroughcf;
+  font-size: 16px; }
+
+.legend {
+  color: white;
+  font-family: Roxboroughcf;
+  font-size: 16px; }
