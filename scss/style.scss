@@ -117,7 +117,7 @@ nav {
 .tit {
     text-align: center;
     height: fit-content;
-    color: rgb(130, 26, 228);
+    color: $color-primary;
     font-family: Roxboroughcf;
     font-size: 30px;
     padding: 30px;
@@ -222,4 +222,31 @@ nav {
         background: beige;
         animation: pulsate 1s ease-in-out;
     }
+}
+
+.app {
+    align-items: center;
+    text-align: center;
+    color: white;
+    font-family: Roxboroughcf;
+    margin-bottom: 70px;
+}
+
+.funciones {
+    margin: 70px;
+    margin-left: 500px;
+}
+
+.items {
+    text-align: left;
+    color: rgb(130, 26, 228);
+    font-family: Roxboroughcf;
+    margin-bottom: 20px;
+}
+
+.list {
+    text-align: center;
+    color: white;
+    font-family: Roxboroughcf;
+    text-align: left;
 }
