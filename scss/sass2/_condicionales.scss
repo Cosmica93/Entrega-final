@@ -1,13 +1,246 @@
 @import "/scss/variables/variables";
+@import "/style.scss";
 
-@if $vista == desktop {
-    @media only screen and (max-width: 1920px) {
+@if $vista ==mobile {
+    @media only screen and (max-width: 328px) {
+        .gridIndex {
+            grid-template-areas: "img img""h1 h1""h2 h2""div div""h3 h3";
+        }
 
-    }
-}
+        .logo {
+            display: grid;
+            grid-area: img;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 250px;
+        }
 
-@if $vista == mobile {
-    @media only screen and (max-width: 328px){
-        
+        .boton {
+            max-width: fit-content;
+            margin: auto;
+
+            &:hover {
+                background: beige;
+            }
+        }
+
+        .primer-encabezado {
+            display: grid;
+            grid-area: h1;
+            color: rgb(130, 26, 228);
+            text-align: center;
+            font-family: Roxboroughcf;
+            font-size: 20px;
+            margin: 10px;
+        }
+
+        .subtitulo {
+            display: grid;
+            grid-area: h2;
+            text-align: center;
+            font-family: Roxboroughcf;
+            font-size: 20px;
+        }
+
+        footer {
+            text-align: center;
+            font-family: Roxboroughcf;
+            text-decoration: none;
+            margin-top: 20px;
+            font-size: small;
+        }
+
+        .titulo {
+            display: flex;
+            flex-wrap: wrap;
+            text-align: center;
+            color: rgb(130, 26, 228);
+            font-family: Roxboroughcf;
+            font-size: 20px;
+            justify-content: center;
+        }
+
+        .nosotros {
+            display: flex;
+            flex-wrap: wrap;
+            text-align: justify;
+            height: fit-content;
+            color: white;
+            font-family: Roxboroughcf;
+            font-size: 16x;
+            margin: 3%;
+            padding: 0%;
+        }
+
+        .team {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+        }
+
+        .equipo {
+            padding: 20px;
+        }
+
+        .equipo1 {
+            padding: 20px;
+        }
+
+        .equipo2 {
+            padding: 20px;
+        }
+
+        .funciones {
+            margin: 3px;
+        }
+
+        .items {
+            text-align: left;
+            color: rgb(130, 26, 228);
+            font-family: Roxboroughcf;
+        }
+
+        .list {
+            text-align: left;
+            color: white;
+            font-family: Roxboroughcf;
+            text-align: justify;
+            margin-right: 3px;
+        }
+
+        .formatoTexto {
+            display: flex;
+            flex-wrap: wrap;
+            text-align: center;
+            flex-direction: column;
+            height: fit-content;
+            color: white;
+            font-family: Roxboroughcf;
+            font-size: 16px;
+        }
+
+        .botonBlog {
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 20px;
+            border-color: rgb(118, 21, 167);
+            background: rgb(238, 174, 202);
+            background: linear-gradient(90deg, rgba(238, 174, 202, 1) 6%, rgba(148, 187, 233, 1) 100%);
+            font-family: Roxboroughcf;
+            font-size: 12px;
+            max-width: 40%;
+
+            &:hover {
+                background: beige;
+            }
+        }
+
+        .placeholder {
+            display: flex;
+            flex-wrap: wrap;
+            text-align: center;
+            flex-direction: column;
+            height: 50%;
+            color: white;
+            font-family: Roxboroughcf;
+            font-size: 13px;
+        }
+
+        .form {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            align-items: center;
+        }
+
+        .fielset {
+            display: flex;
+            text-align: center;
+            flex-direction: column;
+            align-items: center;
+            color: white;
+            font-family: Roxboroughcf;
+            padding: 0%;
+            margin: 3%;
+        }
+
+        .form2 {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            align-items: center;
+        }
+
+        .placeholder2 {
+            width: 80%;
+            columns: 140;
+        }
+        .gridMain {
+            display: grid;
+            grid-template-areas: "texto" "cardUno" "cardDos" "cardTres" "cardCuatro" "cardCinco" "cardSeis";
+        }
+        nav {
+            a {
+                font-family: Roxboroughcf;
+                text-decoration: none;
+                color: rgb(238, 218, 238);
+                font-size: 8px;
+                cursor: pointer;
+                padding: 8px;
+                text-align: right;
+            }
+        }
+        .tit {
+            text-align: left;
+            color: rgb(130, 26, 228);
+            font-family: Roxboroughcf;
+            padding: 10px;
+            font-size: 20px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .texto {
+            display: flex;
+            flex-wrap: wrap;
+            display: grid;
+            grid-area: texto;
+            color: white;
+            font-family: Roxboroughcf;
+            font-size: 16px;
+            margin: 10px;
+            padding: 5px;
+            justify-content: center;
+            text-align: justify;
+        }
+        .imgCard {
+            padding: 30px;
+            width: 150px;
+            display: flex;
+            flex-direction: column;
+        }
+        .card {
+            align-content: center;
+            margin-left: 0px;
+            flex-direction: column;
+            min-width: 0;
+            word-wrap: break-word;
+            background-color: white;
+            border: 1px solid rgba(0,0,0,.125);
+            }
+        .botonBlog {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 5px;
+            padding: 5px;
+            cursor: pointer;
+            border-radius: 10px;
+            border-color: rgb(118, 21, 167);
+            background: rgb(238, 174, 202);
+            background: linear-gradient(90deg, rgba(238, 174, 202, 1) 6%, rgba(148, 187, 233, 1) 100%);
+            font-family: Roxboroughcf;
+            max-width: 100%;
+        }
     }
 }
