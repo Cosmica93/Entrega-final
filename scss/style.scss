@@ -107,3 +107,119 @@ nav {
         animation: pulsate 1s ease-in-out;
     }
 }
+
+.gridMain {
+    display: grid;
+    grid-template-areas: "texto texto texto""cardUno cardDos cardTres""cardCuatro cardCinco cardSeis";
+    justify-content: center;
+}
+
+.tit {
+    text-align: center;
+    height: fit-content;
+    color: rgb(130, 26, 228);
+    font-family: Roxboroughcf;
+    font-size: 30px;
+    padding: 30px;
+}
+
+.texto {
+    display: grid;
+    grid-area: texto;
+    color: white;
+    font-family: Roxboroughcf;
+    margin: 30px;
+    justify-content: center;
+    text-align: justify;
+}
+
+.cardUno {
+    grid-area: cardUno;
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    align-items: center;
+}
+
+.cardDos {
+    grid-area: cardDos;
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    align-items: center;
+}
+
+.cardTres {
+    grid-area: cardTres;
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    align-items: center;
+}
+
+.cardCuatro {
+    grid-area: cardCuatro;
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    align-items: center;
+}
+
+.cardCinco {
+    grid-area: cardCinco;
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    align-items: center;
+}
+
+.cardSeis {
+    grid-area: cardSeis;
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    align-items: center;
+}
+
+.imgCard {
+    padding: 30px;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+
+    &:hover {
+        -webkit-transform: scale(1.3);
+        transform: scale(0.9);
+    }
+}
+
+.footer {
+    display: grid;
+    grid-area: footer;
+}
+
+.botonBlog {
+    display: grid;
+    grid-area: div;
+    padding: 10px;
+    cursor: pointer;
+    border-color: rgb(118, 21, 167);
+    background: rgb(238, 174, 202);
+    background: linear-gradient(90deg, rgba(238, 174, 202, 1) 6%, rgba(148, 187, 233, 1) 100%);
+    font-family: Roxboroughcf;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    display: inline-block;
+    text-decoration: none;
+    color: #3c67e3;
+    border-radius: 15px;
+
+    &:hover {
+        background: beige;
+        animation: pulsate 1s ease-in-out;
+    }
+}
