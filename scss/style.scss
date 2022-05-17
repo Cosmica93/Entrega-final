@@ -5,16 +5,104 @@
 
 
 nav {
-	a {
-		font-family: Roxboroughcf;
-		text-decoration: none;
-		color: rgb(238, 218, 238);
-		font-size: 20px;
-		cursor: pointer;
-		padding: 20px;
-		text-align: right;
-		&:hover {
-			color: rgb(128, 62, 190);
-		}
-	}
+    a {
+        font-family: Roxboroughcf;
+        text-decoration: none;
+        color: rgb(238, 218, 238);
+        font-size: 20px;
+        cursor: pointer;
+        padding: 20px;
+        text-align: right;
+
+        &:hover {
+            color: rgb(128, 62, 190);
+        }
+    }
+}
+
+.gridIndex {
+    display: grid;
+    grid-template-areas: "img img"
+        "h1 h1"
+        "h2 h2"
+        "div div"
+        "h3 h3";
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    display: grid;
+    grid-area: img;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    align-items: center;
+    width: auto;
+    height: 150px;
+    margin: 20px;
+}
+
+.primer-encabezado {
+    font-family: $font;
+    font-size: $size-titulos;
+    color: $color-primary;
+    margin: 30px;
+}
+
+.segundo-encabezado {
+    display: grid;
+    grid-area: h3;
+    text-align: center;
+    font-family: $font;
+}
+
+.article {
+    width: auto;
+    height: 50px;
+    text-align: left;
+}
+
+.subtitulo {
+    display: grid;
+    grid-area: h2;
+    text-align: center;
+    font-family: Roxboroughcf;
+}
+
+.botones {
+    display: grid;
+    grid-area: div;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: space-between;
+    padding: 20px;
+}
+
+.boton {
+    display: grid;
+    grid-area: div;
+    padding: 10px;
+    cursor: pointer;
+    border-color: $color-primary;
+    background: rgb(238, 174, 202);
+    background: linear-gradient(90deg, rgba(238, 174, 202, 1) 6%, rgba(148, 187, 233, 1) 100%);
+    font-family: Roxboroughcf;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    display: inline-block;
+    text-decoration: none;
+    color: #3c67e3;
+    border-radius: 15px;
+
+    &:hover {
+        background: beige;
+        animation: pulsate 1s ease-in-out;
+    }
 }
