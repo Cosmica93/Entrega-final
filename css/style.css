@@ -75,7 +75,8 @@ nav a {
   font-family: Roxboroughcf;
   font-size: 30px;
   color: #821ae4;
-  margin: 30px; }
+  margin: 30px;
+  text-align: center; }
 
 .segundo-encabezado {
   display: grid;
