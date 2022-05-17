@@ -1,0 +1,13 @@
+@import "/scss/variables/variables";
+
+@if $vista == desktop {
+    @media only screen and (max-width: 1920px) {
+
+    }
+}
+
+@if $vista == mobile {
+    @media only screen and (max-width: 328px){
+        
+    }
+}

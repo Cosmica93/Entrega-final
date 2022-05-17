@@ -1,0 +1,13 @@
+@font-face {
+	font-family: Roxboroughcf;
+	src: url("../fonts/RoxboroughCF-Regular.otf");
+}
+@font-face {
+	font-family: Roxboroughcf;
+	font-weight: bold;
+	src: url("../fonts/RoxboroughCF-Bold.otf");
+}
+body {
+	background: rgb(238, 174, 202);
+	background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
+}

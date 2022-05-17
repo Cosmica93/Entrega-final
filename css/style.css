@@ -1,0 +1,40 @@
+nav a {
+  font-family: Roxboroughcf;
+  text-decoration: none;
+  color: #eedaee;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 20px;
+  text-align: right; }
+  nav a:hover {
+    color: #803ebe; }
+
+footer {
+  text-align: center;
+  font-family: Roxboroughcf;
+  text-decoration: none;
+  margin-top: 20px; }
+
+@font-face {
+  font-family: Roxboroughcf;
+  src: url("../fonts/RoxboroughCF-Regular.otf"); }
+
+@font-face {
+  font-family: Roxboroughcf;
+  font-weight: bold;
+  src: url("../fonts/RoxboroughCF-Bold.otf"); }
+
+body {
+  background: #eeaeca;
+  background: radial-gradient(circle, #eeaeca 0%, #94bbe9 100%); }
+
+nav a {
+  font-family: Roxboroughcf;
+  text-decoration: none;
+  color: #eedaee;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 20px;
+  text-align: right; }
+  nav a:hover {
+    color: #803ebe; }

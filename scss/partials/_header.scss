@@ -1,0 +1,14 @@
+nav {
+	a {
+		font-family: Roxboroughcf;
+		text-decoration: none;
+		color: rgb(238, 218, 238);
+		font-size: 20px;
+		cursor: pointer;
+		padding: 20px;
+		text-align: right;
+		&:hover {
+			color: rgb(128, 62, 190);
+		}
+	}
+}
