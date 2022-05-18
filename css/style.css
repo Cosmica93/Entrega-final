@@ -25,8 +25,17 @@ footer {
   src: url("../fonts/RoxboroughCF-Bold.otf"); }
 
 body {
-  background: #eeaeca;
-  background: radial-gradient(circle, #eeaeca 0%, #94bbe9 100%); }
+  background: linear-gradient(to right, #eeaeca, #94bbe9, #d8da84);
+  background-size: 400% 400%;
+  animation: animate-background 7s infinite ease-in-out; }
+
+@keyframes animate-background {
+  0% {
+    background-position: 0 50%; }
+  50% {
+    background-position: 100% 50%; }
+  100% {
+    background-position: 0 50%; } }
 
 @font-face {
   font-family: Roxboroughcf;
@@ -38,8 +47,17 @@ body {
   src: url("../fonts/RoxboroughCF-Bold.otf"); }
 
 body {
-  background: #eeaeca;
-  background: radial-gradient(circle, #eeaeca 0%, #94bbe9 100%); }
+  background: linear-gradient(to right, #eeaeca, #94bbe9, #d8da84);
+  background-size: 400% 400%;
+  animation: animate-background 7s infinite ease-in-out; }
+
+@keyframes animate-background {
+  0% {
+    background-position: 0 50%; }
+  50% {
+    background-position: 100% 50%; }
+  100% {
+    background-position: 0 50%; } }
 
 nav a {
   font-family: Roxboroughcf;

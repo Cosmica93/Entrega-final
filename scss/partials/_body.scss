@@ -2,12 +2,31 @@
 	font-family: Roxboroughcf;
 	src: url("../fonts/RoxboroughCF-Regular.otf");
 }
+
 @font-face {
 	font-family: Roxboroughcf;
 	font-weight: bold;
 	src: url("../fonts/RoxboroughCF-Bold.otf");
 }
+
+
 body {
-	background: rgb(238, 174, 202);
-	background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
+    background: linear-gradient(to right, #eeaeca,
+            #94bbe9, #d8da84);
+    background-size: 400% 400%;
+    animation: animate-background 7s infinite ease-in-out;
+}
+
+@keyframes animate-background {
+    0% {
+        background-position: 0 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0 50%;
+    }
 }
