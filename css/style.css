@@ -256,7 +256,7 @@ nav a {
   margin-left: 500px; }
 
 .items {
-  text-align: left;
+  text-align: center;
   color: #821ae4;
   font-family: Roxboroughcf;
   margin-bottom: 20px; }
@@ -264,8 +264,7 @@ nav a {
 .list {
   text-align: center;
   color: white;
-  font-family: Roxboroughcf;
-  text-align: left; }
+  font-family: Roxboroughcf; }
 
 .coment {
   margin: 10px; }
