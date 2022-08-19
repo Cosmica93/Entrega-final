@@ -67,12 +67,17 @@ function guardarDatos() {
 
 function mostrarDatos() {
     const carta_persona = JSON.parse(sessionStorage.getItem('carta_persona')); 
-    document.getElementById('title_carta_astral').innerHTML = 'La carga fue exitosa!';
-    document.getElementById('nombre_carta_astral').innerHTML = carta_persona.nombre + ' ' + carta_persona.apellido;
-    document.getElementById('datos_carta_astral').innerHTML = 'Naciste en '+ carta_persona.ciudad + ' el ' + 
-    carta_persona.mesNacimiento + '/' + carta_persona.anoNacimiento + ' a las ' + carta_persona.horario + 'hs.';
-    document.getElementById('signo_carta_astral').innerHTML = 'Tu signo solar es <b>' + carta_persona.signoSolar + '</b>';
+    //document.getElementById('title_carta_astral').innerHTML = 'La carga fue exitosa!';
+    //document.getElementById('nombre_carta_astral').innerHTML = carta_persona.nombre + ' ' + carta_persona.apellido;
+    //document.getElementById('datos_carta_astral').innerHTML = 'Naciste en '+ carta_persona.ciudad + ' el ' + 
+    //carta_persona.mesNacimiento + '/' + carta_persona.anoNacimiento + ' a las ' + carta_persona.horario + 'hs.';
+    //document.getElementById('signo_carta_astral').innerHTML = 'Tu signo solar es <b>' + carta_persona.signoSolar + '</b>';
 
-
-
+    swal({
+        title: "Veamos...",
+        text: carta_persona.nombre + ' ' + carta_persona.apellido  +  ' Naciste en ' + carta_persona.ciudad + ' el ' + carta_persona.mesNacimiento + '/'
+        + carta_persona.anoNacimiento + ' a las ' + carta_persona.horario + ' hs. Tu signo solar es ' +  carta_persona.signoSolar,
+        icon: "success",
+    })
 }
+
