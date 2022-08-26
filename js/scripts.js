@@ -68,27 +68,37 @@ function guardarDatos() {
 function mostrarDatos() {
     const carta_persona = JSON.parse(sessionStorage.getItem('carta_persona')); 
 
+    const options = {
+        method: 'POST',
+        headers: {
+            'content-type': 'application/json',
+            'X-RapidAPI-Key': '4ab89ffa32mshce59f8b3cac3c00p1eff30jsne1a2bb12180d',
+            'X-RapidAPI-Host': 'astrologer.p.rapidapi.com'
+        },
+        body: `{"name":${carta_persona.nombre},"year":${carta_persona.anoNacimiento},"month":${carta_persona.mesNacimiento},"day":10,"hour":${carta_persona.horario},"minute":0,"longitude":41.91,"latitude":12.48,"city":${carta_persona.ciudad},"timezone":"Europe/Rome","language":"IT"}`
+    };
+    
+    fetch('https://astrologer.p.rapidapi.com/api/v2/birth-chart', options)
+        .then(response => response.json())
+        .then(response => {
+            swal({
+                title: "Veamos...",
+                text: carta_persona.nombre + ' ' + carta_persona.apellido  +  ' Naciste en ' + carta_persona.ciudad + ' el ' + carta_persona.mesNacimiento + '/'
+                + carta_persona.anoNacimiento + ' a las ' + carta_persona.horario + ' hs. Tu signo solar es ' +  response.sun.sign,
+                icon: "success",
+            })
+        })
+        .catch(err => {
+            swal({
+                title: "¡Ups, algo anda mal!",
+                text: "no pudimos encontrar la información",
+                icon: "error",
+            })
+            console.error(err)} 
+        ); 
+    
 
-    swal({
-        title: "Veamos...",
-        text: carta_persona.nombre + ' ' + carta_persona.apellido  +  ' Naciste en ' + carta_persona.ciudad + ' el ' + carta_persona.mesNacimiento + '/'
-        + carta_persona.anoNacimiento + ' a las ' + carta_persona.horario + ' hs. Tu signo solar es ' +  carta_persona.signoSolar,
-        icon: "success",
-    })
+
 }
 
-const options = {
-	method: 'POST',
-	headers: {
-		'content-type': 'application/json',
-		'X-RapidAPI-Key': '4ab89ffa32mshce59f8b3cac3c00p1eff30jsne1a2bb12180d',
-		'X-RapidAPI-Host': 'astrologer.p.rapidapi.com'
-	},
-	body: '{"name":"Test","year":1993,"month":10,"day":10,"hour":23,"minute":0,"longitude":41.91,"latitude":12.48,"city":"Roma","timezone":"Europe/Rome","language":"IT"}'
-};
-
-fetch('https://astrologer.p.rapidapi.com/api/v2/birth-chart', options)
-	.then(response => response.json())
-    .then(response => console.log(response))
-	.catch(err => console.error(err));
 
