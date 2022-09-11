@@ -48,29 +48,30 @@
             <input type="text" class="form-control" id="ciudad_persona" placeholder="Ingrese su ciudad de nacimiento" required>
         </div>
         <div class="col-md-3 position-relative formatoTexto">
+            <label for="validationTooltip04" class="form-label">Día de nacimiento</label>
+            <input type="text" class="form-control" id="dia_persona" placeholder="DD" required onblur="calcularSignoSolar()">
+        </div>
+        <div class="col-md-3 position-relative formatoTexto">
             <label for="validationTooltip04" class="form-label">Mes de nacimiento</label>
-            <input type="text" class="form-control" id="mes_persona" placeholder="Ingrese su mes de nacimiento" required onblur="calcularSignoSolar()">
+            <input type="text" class="form-control" id="mes_persona" placeholder="MM" required onblur="calcularSignoSolar()">
         </div>
         <div class="col-md-3 position-relative formatoTexto">
             <label for="validationTooltip05" class="form-label">Año de nacimiento</label>
-            <input type="text" class="form-control" id="ano_persona" placeholder="Ingrese su año de nacimiento" required>
+            <input type="text" class="form-control" id="ano_persona" placeholder="AAAA" required>
         </div>
         <div class="col-md-3 position-relative formatoTexto">
             <label for="validationTooltip056" class="form-label">Hora de nacimiento</label>
-            <input type="text" class="form-control" id="horario_persona" placeholder="Ingrese su hora de nacimiento" required>
+            <input type="text" class="form-control" id="horario_persona" placeholder="00:00" required>
         </div>
         <div class="col-12">
             <button class="boton" id="botonCalcular" type="button" onclick="calcularCarta()">Calcular mi carta</button>
         </div>
     </form>
 
-    <div>
-        <h1 id="title_carta_astral"></h1>
-        <h3 id="nombre_carta_astral"></h3>
-        <p id="datos_carta_astral"></p>
-        <h5 id="signo_carta_astral"></h5>
-
-    </div>
+    <div id="carta_astral_svg"></div>
+    <div id="carta_astral_leccion"></div>
+    <div id="carta_astral_cualidad"></div>
+    <div id="carta_astral_informe"></div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
@@ -115,7 +116,7 @@
     </div>
     <!-- Copyright -->
 </footer>
-
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="../js/scripts.js"></script>
 
 </html>
