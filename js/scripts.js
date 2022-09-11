@@ -1,4 +1,4 @@
-const persona = {nombre:"", apellido:"",ciudad:"",mesNacimiento:"",anoNacimiento:"",horario:"",signoSolar:""};
+const persona = {nombre:"", apellido:"",ciudad:"",diaNacimiento:"",mesNacimiento:"",anoNacimiento:"",horario:"",signoSolar:""};
 
 const signosSolares = ["Capricornio", "Acuario", "Piscis", "Aries", "Tauro", "Géminis", "Cáncer", "Leo", "Virgo", "Libra", "Escorpio", "Sagitario"];
 
@@ -49,13 +49,14 @@ function calcularSignoSolar(){
 }
 
 function calcularCarta() {
-    persona["nombre"] = document.getElementById('nombre_persona').value;
-    persona["apellido"] = document.getElementById('apellido_persona').value;
-    persona["mesNacimiento"] = document.getElementById('mes_persona').value;
-    persona["anoNacimiento"] = document.getElementById('ano_persona').value;
-    persona["ciudad"] = document.getElementById('ciudad_persona').value;
-    persona["horario"] = document.getElementById('horario_persona').value; 
-    guardarDatos();
+persona["nombre"] = document.getElementById('nombre_persona').value;
+persona["apellido"] = document.getElementById('apellido_persona').value;
+persona["diaNacimiento"] = document.getElementById('dia_persona').value;
+persona["mesNacimiento"] = document.getElementById('mes_persona').value;
+persona["anoNacimiento"] = document.getElementById('ano_persona').value;
+persona["ciudad"] = document.getElementById('ciudad_persona').value;
+persona["horario"] = document.getElementById('horario_persona').value; 
+guardarDatos();
 }
 
 function guardarDatos() {
@@ -68,37 +69,59 @@ function guardarDatos() {
 function mostrarDatos() {
     const carta_persona = JSON.parse(sessionStorage.getItem('carta_persona')); 
 
-    const options = {
-        method: 'POST',
-        headers: {
-            'content-type': 'application/json',
-            'X-RapidAPI-Key': '4ab89ffa32mshce59f8b3cac3c00p1eff30jsne1a2bb12180d',
-            'X-RapidAPI-Host': 'astrologer.p.rapidapi.com'
-        },
-        body: `{"name":${carta_persona.nombre},"year":${carta_persona.anoNacimiento},"month":${carta_persona.mesNacimiento},"day":10,"hour":${carta_persona.horario},"minute":0,"longitude":41.91,"latitude":12.48,"city":${carta_persona.ciudad},"timezone":"Europe/Rome","language":"IT"}`
+    var api = 'natal_wheel_chart';
+    var userId = '620604';
+    var apiKey = 'e562182374ebc2b98310322e1d628300';
+    var data = {
+    day:12,
+    month:carta_persona.mesNacimiento,
+    year:carta_persona.anoNacimiento,
+    hour:carta_persona.horario,
+    min:12,
+    lat:-31.31,
+    lon:-64.28,
+    tzone:-3
     };
+    var request = $.ajax({
+    url: "https://json.astrologyapi.com/v1/"+api,
+    method: "POST",
+    dataType:'json',
+    headers: {
+    "authorization": "Basic " + btoa(userId+":"+apiKey),
+    "Content-Type":'application/json'
+    },
+    data:JSON.stringify(data)
+    });
     
-    fetch('https://astrologer.p.rapidapi.com/api/v2/birth-chart', options)
-        .then(response => response.json())
-        .then(response => {
-            swal({
-                title: "Veamos...",
-                text: carta_persona.nombre + ' ' + carta_persona.apellido  +  ' Naciste en ' + carta_persona.ciudad + ' el ' + carta_persona.mesNacimiento + '/'
-                + carta_persona.anoNacimiento + ' a las ' + carta_persona.horario + ' hs. Tu signo solar es ' +  response.sun.sign,
-                icon: "success",
-            })
-        })
-        .catch(err => {
-            swal({
-                title: "¡Ups, algo anda mal!",
-                text: "no pudimos encontrar la información",
-                icon: "error",
-            })
-            console.error(err)} 
-        ); 
+    request.then( function(resp){
+    console.log(resp);
+    $("#carta_astral_svg").css("background-image", "url("+ resp.chart_url +")");
+    }, function(err){
+    console.log(err);
+    });
     
+
+    var api = 'personality_report/tropical';
+    var request = $.ajax({
+    url: "https://json.astrologyapi.com/v1/"+api,
+    method: "POST",
+    dataType:'json',
+    headers: {
+    "authorization": "Basic " + btoa(userId+":"+apiKey),
+    "Content-Type":'application/json'
+    },
+    data:JSON.stringify(data)
+    });
+    
+    request.then( function(resp){
+    console.log(resp);
+    document.getElementById('carta_astral_leccion').innerHTML = resp.spiritual_lesson;
+    document.getElementById('carta_astral_cualidad').innerHTML = 'Cualidad principal: ' + resp.key_quality;
+    document.getElementById('carta_astral_informe').innerHTML = 'Informe completo: ' + resp.report;
+    }, function(err){
+    console.log(err);
+    });
+
 
 
 }
-
-

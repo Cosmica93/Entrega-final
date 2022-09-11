@@ -72,7 +72,11 @@ nav a {
 
 .gridIndex {
   display: grid;
-  grid-template-areas: "img img" "h1 h1" "h2 h2" "div div" "h3 h3";
+  grid-template-areas: "img img"
+ "h1 h1"
+ "h2 h2"
+ "div div"
+ "h3 h3";
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -303,3 +307,42 @@ nav a {
   .equipo:hover {
     -webkit-transform: scale(1.3);
     transform: scale(0.9); }
+
+#carta_astral_svg{
+  background-size: contain;
+    height: 500px;
+    width: auto;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+#carta_astral_leccion{
+  display: grid;
+  grid-area: texto;
+  color: white;
+  font-family: Roxboroughcf;
+  margin: 50px;
+  justify-content: center;
+  text-align: justify; 
+}
+
+#carta_astral_cualidad{
+  display: grid;
+  grid-area: texto;
+  color: white;
+  font-family: Roxboroughcf;
+  margin: 50px;
+  justify-content: center;
+  text-align: justify; 
+}
+
+#carta_astral_informe{
+  display: grid;
+  grid-area: texto;
+  color: white;
+  font-family: Roxboroughcf;
+  margin: 30px;
+  justify-content: center;
+  text-align: justify; 
+}
