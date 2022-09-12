@@ -73,11 +73,11 @@ function mostrarDatos() {
     var userId = '620604';
     var apiKey = 'e562182374ebc2b98310322e1d628300';
     var data = {
-    day:12,
+    day:carta_persona.diaNacimiento,
     month:carta_persona.mesNacimiento,
     year:carta_persona.anoNacimiento,
     hour:carta_persona.horario,
-    min:12,
+    min:00,
     lat:-31.31,
     lon:-64.28,
     tzone:-3
